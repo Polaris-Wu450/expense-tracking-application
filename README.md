@@ -82,12 +82,12 @@ expense-tracking-application/
     cd ../client
     npm start
 
-### Deployment
+## Deployment
 For deployment, the application is hosted on AWS EC2. In production, consider using process managers like PM2 for the backend and ensure that environment variables are securely managed.
 
-### Contributing
+## Contributing
 Contributions are welcome! If you have suggestions, improvements, or bug fixes, feel free to open an issue or submit a pull request.
 
-### License
+## License
 This project is licensed under the Apache License, Version 2.0.  
 See the [LICENSE](LICENSE) file for more details.
