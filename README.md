@@ -1,41 +1,93 @@
-### Expensify
+# Expense Tracking Application
 
-**A MERN Stack project for expense tracking**
+**A MERN Stack Project for Tracking Expenses and Visualizing Data**
 
-Expensify is a MERN Stack project that allows users to track their expenses and generate reports. It has the following features:
+Expense Tracking Application is a full-stack project built using the MERN stack (MongoDB, Express.js, React, and Node.js). It helps users manage their expenses and gain insights into their spending habits through data visualization.
 
-🔒 **Authentication with JWT**:
-Expensify uses JWT for authentication. This means that users will receive a JWT token after logging in, which they can use to access protected resources.
+## Features
 
-🔐 **Protected Routing (Frontend & Backend)**:
-Ensuring security, Expensify implements protected routing both on the frontend and backend. This guarantees that only authenticated users with appropriate permissions can access specific routes, enhancing data security.
+- **MERN Stack Architecture:**
+  - Developed with MongoDB, Express.js, React, and Node.js.
+  - Implements an MVC architecture, separating the backend (in the `server` directory) from the frontend (in the `client` directory) for easier maintenance and scalability.
 
-🔄 **Seamless data fetching using Tan Stack Query**:
-Expensify uses Tan Stack Query to fetch data from the backend. This allows for seamless and efficient data fetching.
+- **User Authentication:**
+  - **Google Login using OAuth 2.0:** Quickly authenticate using your Google account.
+  - **Email Login with JWT:** Secure login via email/password using JSON Web Tokens for authentication.
 
-💳 **Razorpay payment gateway for upgrading to a pro version with premium features like leaderboard and report generation**:
-Expensify uses Razorpay as its payment gateway. This allows users to upgrade to the pro version and access premium features like the leaderboard and report generation.
+- **RESTful API:**
+  - Provides endpoints for managing user information, expense categories, and expense records.
+  - Designed following RESTful principles for clean and efficient integration.
 
-📈 **Reports visualized using Chart JS 2**:
-Expensify uses Chart JS 2 to visualize reports. This allows for interactive and visually appealing reports.
+- **Data Visualization:**
+  - Displays expense data with interactive visualizations to help users understand spending trends.
 
-📊 **Download reports (pro version) as CSV files for monthly or yearly periods, which are also stored in the cloud after generating**:
-Pro users can download their reports as CSV files for monthly or yearly periods. These reports are also stored in cloudinary after generating.
+- **Security:**
+  - Uses `express-rate-limit` to protect the backend from sudden surges in traffic and potential malicious attacks.
 
-📜 **Pagination of Expenses**:
-Expensify provides the ability to paginate expenses, allowing users to view their data in manageable pages.
+- **Deployment:**
+  - Successfully deployed on AWS EC2, ensuring reliable performance and scalability.
 
-🔑 **Reset Password Feature**:
-Users can easily reset their passwords through the backend, which utilizes the Nodemailer server for secure password reset processes.
+## Project Structure
 
-🏆 **Leaderboard (pro version)**:
-Users can see the total expenses of all users in the application, giving a sense of competition and comparison.
+```plaintext
+expense-tracking-application/
+├── client/                # Frontend React application
+│   ├── package.json       # Client dependencies and scripts
+│   ├── public/            # Static files (e.g., index.html, images)
+│   └── src/               # React components, styles, and source code
+├── server/                # Backend Node.js/Express application
+│   ├── package.json       # Server dependencies and scripts
+│   ├── app.js             # Main entry point for the server
+│   └── routes/            # RESTful API route handlers
+├── README.md              # Project documentation and setup guide
+└── .gitignore             # Files and directories to be ignored by Git (e.g., node_modules/)
+```
 
-📱 **Fully responsive UI using Chakra UI**:
-Expensify has a fully responsive UI using Chakra UI. This means that it looks great on all devices, including mobile devices.
+## Getting Started
 
-📂 **MongoDB database for storing data**:
-Expensify uses MongoDB to store data. This allows for scalable and flexible data storage.
+### Prerequisites
 
-📚 **Download history for tracking previous downloads**:
-Users can check their previous downloads from the download history page. This allows them to easily track their downloaded reports.
+- Node.js (v14 or higher recommended)
+- npm or yarn
+- MongoDB (local or cloud instance)
+
+### Installation
+
+1. **Clone the Repository:**
+
+   ```bash
+   git clone https://github.com/your-username/expense-tracking-application.git
+   cd expense-tracking-application
+
+2. **Set Up the Backend:**
+   ```bash
+   cd server
+   npm install
+
+- Create a `.env` file in the `server` directory with the necessary environment variables (e.g., MongoDB URI, JWT secret, Google OAuth credentials).
+3. **Set Up the Frontend:**
+    ```bash
+    cd ../client
+    npm install
+
+- Configure any required environment variables in a `.env` file for the frontend.
+4. **Run the Application:**
+  - **Start the Backend:**
+    ```bash
+    cd ../server
+    npm start
+
+  - **Start the Frontend:**
+    ```bash
+    cd ../client
+    npm start
+
+### Deployment
+For deployment, the application is hosted on AWS EC2. In production, consider using process managers like PM2 for the backend and ensure that environment variables are securely managed.
+
+### Contributing
+Contributions are welcome! If you have suggestions, improvements, or bug fixes, feel free to open an issue or submit a pull request.
+
+### License
+This project is licensed under the Apache License, Version 2.0.  
+See the [LICENSE](LICENSE) file for more details.
